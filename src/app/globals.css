@@ -45,39 +45,74 @@
 
 @layer components {
    .btn {
-      @apply;
+      @apply flex justify-center items-center rounded-sm;
    }
 
-   .btn--primary {
-      @apply;
+   .btn--sm {
+      @apply p-sm gap-x-1 regular-12;
    }
 
-   .btn--secondary {
-      @apply;
+   .btn--md {
+      @apply px-md py-sm gap-x-2 medium-16;
    }
 
-   .btn--danger {
-      @apply;
+   .btn--lg {
+      @apply px-md py-sm h-[48px] gap-x-2 medium-16;
    }
 
-   .badge {
-      @apply;
+   .btn--xl {
+      @apply px-md py-sm h-[56px] gap-x-2 medium-16;
    }
 
-   .badge--primary {
-      @apply;
+   .btn--primary--fill {
+      @apply bg-primary-400 text-secondary-0 hover:bg-primary-500 transition-all;
    }
 
-   .badge--secondary {
-      @apply;
+   .btn--primary--stroke {
+      @apply bg-transparent border border-primary-400 text-primary-400 hover:border-primary-500
+      hover:text-primary-500 transition-all;
    }
 
-   .badge--success {
-      @apply;
+   .btn--primary--text {
+      @apply bg-transparent text-primary-400 hover:text-primary-500 transition-all;
    }
 
-   .badge--danger {
-      @apply;
+   .btn--secondary--fill {
+      @apply bg-primary-50 text-primary-400 hover:bg-primary-100 transition-all;
+   }
+
+   .btn--secondary--stroke {
+      @apply bg-transparent border border-secondary-0 text-secondary-0 hover:border-secondary-100
+      hover:text-secondary-100 transition-all;
+   }
+
+   .btn--secondary--text {
+      @apply bg-transparent text-secondary-0 hover:text-secondary-100 transition-all;
+   }
+
+   .btn--tertiary--fill {
+      @apply bg-secondary-700 text-secondary-0 hover:bg-secondary-800 transition-all;
+   }
+
+   .btn--tertiary--stroke {
+      @apply bg-transparent border border-secondary-700 text-secondary-700 hover:border-secondary-800
+      hover:text-secondary-800 transition-all;
+   }
+
+   .btn--tertiary--text {
+      @apply bg-transparent text-secondary-700 hover:text-secondary-800 transition-all;
+   }
+
+   .btn--disabled--fill {
+      @apply bg-secondary-300 text-secondary-400;
+   }
+
+   .btn--disabled--stroke {
+      @apply bg-transparent border border-secondary-400 text-secondary-400;
+   }
+
+   .btn--disabled--text {
+      @apply bg-transparent text-secondary-400;
    }
 
    .flexRowCenter {
