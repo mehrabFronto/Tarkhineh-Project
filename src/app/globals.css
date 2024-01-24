@@ -115,6 +115,58 @@
       @apply bg-transparent text-secondary-400;
    }
 
+   .input__container {
+      @apply relative;
+   }
+
+   .input__label {
+      @apply absolute top-1.5 right-4 transition-all cursor-text text-secondary-800;
+   }
+
+   .input {
+      @apply outline-none border border-secondary-500 text-secondary-800 rounded-md 
+      hover:border-secondary-800 transition-all focus:border-primary-400 focus:text-primary-400;
+   }
+
+   .input:hover ~ .input__label {
+      @apply text-secondary-800;
+   }
+
+   .input:focus + .input__label {
+      @apply -translate-y-5 bg-secondary-0 px-1 regular-12 text-primary-400;
+   }
+
+   .input:disabled {
+      @apply border-secondary-500 bg-transparent;
+   }
+
+   .input:disabled ~ .input__label {
+      @apply text-secondary-500;
+   }
+
+   .input--error,
+   .input--error:focus,
+   .input--error:hover,
+   .input--error ~ .input__label {
+      @apply !border-error !text-error;
+   }
+
+   .input--sm {
+      @apply regular-12 px-md py-sm;
+   }
+
+   .input--md {
+      @apply regular-14 px-md py-sm;
+   }
+
+   .input--lg {
+      @apply regular-14 px-md py-[0.6rem];
+   }
+
+   .input--xl {
+      @apply regular-14 p-md;
+   }
+
    .flexRowCenter {
       @apply flex items-center justify-center;
    }
