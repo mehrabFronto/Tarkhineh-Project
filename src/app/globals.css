@@ -188,15 +188,15 @@
    }
 
    .flexColCenter {
-      @apply flex justify-center items-center;
+      @apply flex flex-col justify-center items-center;
    }
 
    .flexColStart {
-      @apply flex justify-center items-start;
+      @apply flex flex-col justify-center items-start;
    }
 
    .flexColEnd {
-      @apply flex justify-center items-end;
+      @apply flex flex-col justify-center items-end;
    }
 
    /* FONTS */

@@ -1,4 +1,5 @@
 import estedadFont from "@/constants/localFonts";
+import Header from "./Header";
 import "./globals.css";
 
 export const metadata = {
@@ -11,7 +12,10 @@ export default function RootLayout({ children }) {
       <html
          lang="fa"
          dir="rtl">
-         <body className={`${estedadFont.variable} font-sans`}>{children}</body>
+         <body className={`${estedadFont.variable} font-sans`}>
+            <Header />
+            <main className="container">{children}</main>
+         </body>
       </html>
    );
 }
