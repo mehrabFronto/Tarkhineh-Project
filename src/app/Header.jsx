@@ -9,9 +9,7 @@ import { listItems, userNavLinks } from "@/constants";
 import useOutsideClick from "@/hooks/useOutsideClick";
 
 const Header = () => {
-   const pathname = usePathname();
    const [activeSegments, setActiveSegments] = useState("");
-   const ref = useOutsideClick(() => setActiveSegments(""));
 
    return (
       <header>
@@ -46,109 +44,130 @@ const Header = () => {
                />
             </div>
 
-            {/* desktop list items */}
-            <ul className="hidden xl:flexRowCenter w-full gap-x-6">
-               {listItems.map(({ label, href, icon, segments }) => (
-                  <li
-                     key={label}
-                     className={`flexRowCenter gap-x-1 transition-all cursor-pointer relative
-                     ${
-                        pathname === href
-                           ? "bold-20 text-primary-400 border-b border-primary-400"
-                           : "regular-20 text-secondary-700"
-                     }`}>
-                     {icon ? (
-                        <Fragment>
-                           <div
-                              className="flexRowCenter gap-x-1"
-                              onClick={() => setActiveSegments(segments.key)}>
-                              <span>{label}</span>
-                              <Image
-                                 src="/images/arrow-down.svg"
-                                 alt="Tarkhineh"
-                                 width={16}
-                                 height={16}
-                                 className={`transition-all duration-500 ${
-                                    activeSegments === segments.key
-                                       ? "rotate-180"
-                                       : ""
-                                 }`}
-                              />
-                           </div>
-                           {activeSegments === segments.key && (
-                              <DesktopItemSegments
-                                 segments={segments.list}
-                                 onClose={() => setActiveSegments("")}
-                              />
-                           )}
-                        </Fragment>
-                     ) : (
-                        <Link href={href}>{label}</Link>
-                     )}
-                  </li>
-               ))}
-            </ul>
+            {/* desktop navbar */}
 
-            {/* other buttons */}
-            <div className="flexRowCenter gap-x-1 xl:gap-x-2">
-               <button className="hidden xl:flexRowCenter size-6 xl:size-10 bg-primary-50 rounded-sm">
-                  <Image
-                     src="/images/search-normal.svg"
-                     alt="Tarkhineh"
-                     width={16}
-                     height={16}
-                     className="w-4 h-4 xl:w-6 xl:h-6"
-                  />
-               </button>
-               <button className="flexRowCenter size-6 xl:size-10 bg-primary-50 rounded-sm">
-                  <Image
-                     src="/images/shopping-cart.svg"
-                     alt="Tarkhineh"
-                     width={16}
-                     height={16}
-                     className="w-4 h-4 xl:w-6 xl:h-6"
-                  />
-               </button>
-               <div className="relative">
-                  <button
-                     ref={ref}
-                     onClick={() => setActiveSegments(userNavLinks.key)}
-                     className="flexRowCenter gap-x-1 w-10 h-6 xl:w-14 xl:h-10 bg-primary-50 rounded-sm">
-                     <Image
-                        src="/images/user.svg"
-                        alt="Tarkhineh"
-                        width={16}
-                        height={16}
-                        className="w-4 h-4 xl:w-6 xl:h-6"
-                     />
-                     <Image
-                        src="/images/arrow-down-green.svg"
-                        alt="Tarkhineh"
-                        width={16}
-                        height={16}
-                        className={`transition-all duration-500 ${
-                           activeSegments === userNavLinks.key
-                              ? "rotate-180"
-                              : ""
-                        }`}
-                     />
-                  </button>
+            <DesktopNavbar
+               activeSegments={activeSegments}
+               onActive={setActiveSegments}
+            />
 
-                  {activeSegments === userNavLinks.key && (
-                     <DesktopItemSegments
-                        segments={userNavLinks.segments}
-                        onClose={() => setActiveSegments("")}
-                        activeSegments={activeSegments}
-                     />
-                  )}
-               </div>
-            </div>
+            {/* header buttons */}
+            <HeaderButtons
+               activeSegments={activeSegments}
+               onActive={setActiveSegments}
+            />
          </nav>
       </header>
    );
 };
 
 export default Header;
+
+const DesktopNavbar = ({ activeSegments, onActive }) => {
+   const pathname = usePathname();
+
+   return (
+      <ul className="hidden xl:flexRowCenter w-full gap-x-6">
+         {listItems.map(({ label, href, icon, segments }) => (
+            <li
+               key={label}
+               className={`flexRowCenter gap-x-1 transition-all cursor-pointer relative
+                     ${
+                        pathname === href
+                           ? "bold-20 text-primary-400 border-b border-primary-400"
+                           : "regular-20 text-secondary-700"
+                     }`}>
+               {icon ? (
+                  <Fragment>
+                     <div
+                        className="flexRowCenter gap-x-1"
+                        onClick={() => onActive(segments.key)}>
+                        <span>{label}</span>
+                        <Image
+                           src="/images/arrow-down.svg"
+                           alt="Tarkhineh"
+                           width={16}
+                           height={16}
+                           className={`transition-all duration-500 ${
+                              activeSegments === segments.key
+                                 ? "rotate-180"
+                                 : ""
+                           }`}
+                        />
+                     </div>
+                     {activeSegments === segments.key && (
+                        <DesktopItemSegments
+                           segments={segments.list}
+                           onClose={() => onActive("")}
+                        />
+                     )}
+                  </Fragment>
+               ) : (
+                  <Link href={href}>{label}</Link>
+               )}
+            </li>
+         ))}
+      </ul>
+   );
+};
+
+const HeaderButtons = ({ activeSegments, onActive }) => {
+   const ref = useOutsideClick(() => onActive(""));
+
+   return (
+      <div className="flexRowCenter gap-x-1 xl:gap-x-2">
+         <button className="hidden xl:flexRowCenter size-6 xl:size-10 bg-primary-50 rounded-sm">
+            <Image
+               src="/images/search-normal.svg"
+               alt="Tarkhineh"
+               width={16}
+               height={16}
+               className="w-4 h-4 xl:w-6 xl:h-6"
+            />
+         </button>
+         <button className="flexRowCenter size-6 xl:size-10 bg-primary-50 rounded-sm">
+            <Image
+               src="/images/shopping-cart.svg"
+               alt="Tarkhineh"
+               width={16}
+               height={16}
+               className="w-4 h-4 xl:w-6 xl:h-6"
+            />
+         </button>
+         <div className="relative">
+            <button
+               ref={ref}
+               onClick={() => onActive(userNavLinks.key)}
+               className="flexRowCenter gap-x-1 w-10 h-6 xl:w-14 xl:h-10 bg-primary-50 rounded-sm">
+               <Image
+                  src="/images/user.svg"
+                  alt="Tarkhineh"
+                  width={16}
+                  height={16}
+                  className="w-4 h-4 xl:w-6 xl:h-6"
+               />
+               <Image
+                  src="/images/arrow-down-green.svg"
+                  alt="Tarkhineh"
+                  width={16}
+                  height={16}
+                  className={`transition-all duration-500 ${
+                     activeSegments === userNavLinks.key ? "rotate-180" : ""
+                  }`}
+               />
+            </button>
+
+            {activeSegments === userNavLinks.key && (
+               <DesktopItemSegments
+                  segments={userNavLinks.segments}
+                  onClose={() => onActive("")}
+                  activeSegments={activeSegments}
+               />
+            )}
+         </div>
+      </div>
+   );
+};
 
 const DesktopItemSegments = ({ segments, onClose, activeSegments = "" }) => {
    const ref = useOutsideClick(onClose);
