@@ -321,7 +321,7 @@ const DesktopItemSegments = ({ segments, onClose, activeSegments = "" }) => {
             <Link
                key={label}
                href={href}
-               className={`flexRowStart gap-x-1 text-secondary-800 regular-14 w-[144px] ${
+               className={`flexRowStart gap-x-1 text-secondary-800 regular-14 w-[144px] border-b ${
                   icon ? "p-sm" : "px-md py-sm"
                }`}>
                {icon && (
