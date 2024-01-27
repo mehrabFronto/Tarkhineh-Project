@@ -5,11 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useState } from "react";
 
-import { listItems, userNavLinks } from "@/constants";
+import { burgerMenuItems, listItems, userNavLinks } from "@/constants";
 import useOutsideClick from "@/hooks/useOutsideClick";
+import { Loadable } from "next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints";
 
 const Header = () => {
    const [activeSegments, setActiveSegments] = useState("");
+   const [isOpen, setIsOpen] = useState(false);
 
    return (
       <header>
@@ -17,7 +19,9 @@ const Header = () => {
             className="container px-[1.25rem] py-md xl:px-[6.75rem] xl:py-xl flexRowBetween
             xl:gap-x-[54px]">
             {/* burger menu button */}
-            <button className="flexRowCenter xl:hidden">
+            <button
+               onClick={() => setIsOpen(true)}
+               className="flexRowCenter xl:hidden">
                <Image
                   src="/images/menu.svg"
                   alt="Tarkhineh"
@@ -25,6 +29,14 @@ const Header = () => {
                   height={24}
                />
             </button>
+
+            {isOpen && (
+               <MobileBurgerMenu
+                  onClose={() => setIsOpen(false)}
+                  onActive={setActiveSegments}
+                  activeSegments={activeSegments}
+               />
+            )}
 
             {/* logo */}
             <div className="flexRowCenter xl:items-start gap-x-1 xl:gap-x-2">
@@ -62,6 +74,131 @@ const Header = () => {
 };
 
 export default Header;
+
+const MobileBurgerMenu = ({ onClose, onActive, activeSegments }) => {
+   const pathname = usePathname();
+
+   return (
+      <div className="2xl:hidden">
+         {/* backdrop */}
+         <div
+            className="fixed w-full h-screen top-0 left-0 z-20 backdrop-blur-[2px]
+            bg-secondary-900 bg-opacity-15"
+            onClick={onClose}
+         />
+
+         {/* menu */}
+         <div className="absolute w-3/4 bg-secondary-0 h-screen z-30 top-0 right-0">
+            {/* banner */}
+            <div className="relative w-full">
+               <Image
+                  src="/images/top Frame.png"
+                  alt="banner"
+                  width={256}
+                  height={94}
+                  className="w-full"
+               />
+
+               <button
+                  onClick={onClose}
+                  className="w-6 h-6 absolute top-4 left-4">
+                  <Image
+                     src="/images/Close-white.svg"
+                     alt="banner"
+                     width={24}
+                     height={24}
+                  />
+               </button>
+            </div>
+
+            {/* list items */}
+            <ul className="flexColStart px-md">
+               {burgerMenuItems.map(
+                  ({ label, href, icon, segments }, index) => (
+                     <li
+                        key={index}
+                        className={`flexRowStart gap-x-1 w-full transition-all border-b last:border-b-0 ${
+                           href === pathname
+                              ? "regular-14 text-primary-400"
+                              : "regular-12 text-secondary-800"
+                        }`}>
+                        {segments ? (
+                           <div className="w-full">
+                              <div
+                                 onClick={() => onActive(segments.key)}
+                                 className="w-full flexRowBetween py-sm">
+                                 <div className="flexRowStart gap-x-1 w-full">
+                                    <Image
+                                       src={icon}
+                                       alt={Loadable}
+                                       width={12}
+                                       height={12}
+                                       className={`${
+                                          href === pathname
+                                             ? "w-4 h-4"
+                                             : "w-3 h-3"
+                                       }`}
+                                    />
+                                    <span>{label}</span>
+                                 </div>
+                                 <Image
+                                    src={"/images/arrow-down-black.svg"}
+                                    alt="arrow-down"
+                                    width={16}
+                                    height={16}
+                                    className={` transition-all duration-500 ${
+                                       segments.key === activeSegments
+                                          ? "rotate-180"
+                                          : ""
+                                    }`}
+                                 />
+                              </div>
+
+                              {segments.key === activeSegments && (
+                                 <ul className="mt-xs">
+                                    {segments.list.map((segment, index) => (
+                                       <li
+                                          key={index}
+                                          className="text-secondary-700 border-b last:border-b-0
+                                          last:mb-md">
+                                          <Link
+                                             onClick={onClose}
+                                             className="px-sm py-[4px] block"
+                                             href={segment.href}>
+                                             {segment.label}
+                                          </Link>
+                                       </li>
+                                    ))}
+                                 </ul>
+                              )}
+                           </div>
+                        ) : (
+                           <Link
+                              href={href}
+                              onClick={onClose}
+                              className="w-full block">
+                              <div className="py-sm w-full flexRowStart gap-x-1">
+                                 <Image
+                                    src={icon}
+                                    alt="arrow-down"
+                                    width={12}
+                                    height={12}
+                                    className={` ${
+                                       href === pathname ? "w-4 h-4" : "w-3 h-3"
+                                    }`}
+                                 />
+                                 <span>{label}</span>
+                              </div>
+                           </Link>
+                        )}
+                     </li>
+                  ),
+               )}
+            </ul>
+         </div>
+      </div>
+   );
+};
 
 const DesktopNavbar = ({ activeSegments, onActive }) => {
    const pathname = usePathname();

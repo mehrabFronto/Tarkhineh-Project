@@ -61,3 +61,35 @@ export const userNavLinks = {
       },
    ],
 };
+
+export const burgerMenuItems = [
+   { href: "/", label: "صفحه اصلی", icon: "/images/home.svg" },
+   {
+      label: "منو",
+      icon: "/images/menu-board.svg",
+      segments: {
+         key: "menu",
+         list: [
+            { label: "غذای اصلی", href: "/menu/main-course" },
+            { label: "پیش غذا", href: "/menu/appetizer" },
+            { label: "دسر", href: "/menu/dessert" },
+            { label: "نوشیدنی", href: "/menu/beverages" },
+         ],
+      },
+   },
+   {
+      label: "شعبه",
+      icon: "/images/home-hashtag.svg",
+      segments: {
+         key: "branch",
+         list: [
+            { label: "اکتابان", href: "/branch/oktaban" },
+            { label: "چالوس", href: "/branch/chaloos" },
+            { label: "افدسیه", href: "/branch/aghdasieh" },
+            { label: "ونک", href: "/branch/vanak" },
+         ],
+      },
+   },
+   { href: "/about", label: "درباره ما", icon: "/images/profile-2user.svg" },
+   { href: "/contact", label: "تماس با ما", icon: "/images/call-calling.svg" },
+];
