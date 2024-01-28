@@ -78,6 +78,11 @@ export default Header;
 const MobileBurgerMenu = ({ onClose, onActive, activeSegments }) => {
    const pathname = usePathname();
 
+   const clickHandler = (key) => {
+      if (key === activeSegments) onActive("");
+      else onActive(key);
+   };
+
    return (
       <div className="2xl:hidden">
          {/* backdrop */}
@@ -125,10 +130,14 @@ const MobileBurgerMenu = ({ onClose, onActive, activeSegments }) => {
                         {segments ? (
                            <div className="w-full">
                               <div
-                                 onClick={() => onActive(segments.key)}
+                                 id="exception__id"
+                                 onClick={() => clickHandler(segments.key)}
                                  className="w-full flexRowBetween py-sm">
-                                 <div className="flexRowStart gap-x-1 w-full">
+                                 <div
+                                    id="exception__id"
+                                    className="flexRowStart gap-x-1 w-full">
                                     <Image
+                                       id="exception__id"
                                        src={icon}
                                        alt={Loadable}
                                        width={12}
@@ -139,9 +148,10 @@ const MobileBurgerMenu = ({ onClose, onActive, activeSegments }) => {
                                              : "w-3 h-3"
                                        }`}
                                     />
-                                    <span>{label}</span>
+                                    <span id="exception__id">{label}</span>
                                  </div>
                                  <Image
+                                    id="exception__id"
                                     src={"/images/arrow-down-black.svg"}
                                     alt="arrow-down"
                                     width={16}
@@ -203,6 +213,11 @@ const MobileBurgerMenu = ({ onClose, onActive, activeSegments }) => {
 const DesktopNavbar = ({ activeSegments, onActive }) => {
    const pathname = usePathname();
 
+   const clickHandler = (key) => {
+      if (key === activeSegments) onActive("");
+      else onActive(key);
+   };
+
    return (
       <ul className="hidden xl:flexRowCenter w-full gap-x-6">
          {listItems.map(({ label, href, icon, segments }) => (
@@ -217,10 +232,12 @@ const DesktopNavbar = ({ activeSegments, onActive }) => {
                {icon ? (
                   <Fragment>
                      <div
+                        id="exception__id"
                         className="flexRowCenter gap-x-1"
-                        onClick={() => onActive(segments.key)}>
-                        <span>{label}</span>
+                        onClick={() => clickHandler(segments.key)}>
+                        <span id="exception__id">{label}</span>
                         <Image
+                           id="exception__id"
                            src="/images/arrow-down.svg"
                            alt="Tarkhineh"
                            width={16}
@@ -249,7 +266,10 @@ const DesktopNavbar = ({ activeSegments, onActive }) => {
 };
 
 const HeaderButtons = ({ activeSegments, onActive }) => {
-   const ref = useOutsideClick(() => onActive(""));
+   const clickHandler = (key) => {
+      if (key === activeSegments) onActive("");
+      else onActive(key);
+   };
 
    return (
       <div className="flexRowCenter gap-x-1 xl:gap-x-2">
@@ -271,12 +291,15 @@ const HeaderButtons = ({ activeSegments, onActive }) => {
                className="w-4 h-4 xl:w-6 xl:h-6"
             />
          </button>
-         <div className="relative">
+         <div
+            id="exception__id"
+            className="relative">
             <button
-               ref={ref}
-               onClick={() => onActive(userNavLinks.key)}
+               id="exception__id"
+               onClick={() => clickHandler(userNavLinks.key)}
                className="flexRowCenter gap-x-1 w-10 h-6 xl:w-14 xl:h-10 bg-primary-50 rounded-sm">
                <Image
+                  id="exception__id"
                   src="/images/user.svg"
                   alt="Tarkhineh"
                   width={16}
@@ -284,6 +307,7 @@ const HeaderButtons = ({ activeSegments, onActive }) => {
                   className="w-4 h-4 xl:w-6 xl:h-6"
                />
                <Image
+                  id="exception__id"
                   src="/images/arrow-down-green.svg"
                   alt="Tarkhineh"
                   width={16}
@@ -307,7 +331,7 @@ const HeaderButtons = ({ activeSegments, onActive }) => {
 };
 
 const DesktopItemSegments = ({ segments, onClose, activeSegments = "" }) => {
-   const ref = useOutsideClick(onClose);
+   const ref = useOutsideClick(onClose, "exception__id");
 
    return (
       <ul
