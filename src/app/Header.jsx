@@ -336,7 +336,7 @@ const DesktopItemSegments = ({ segments, onClose, activeSegments = "" }) => {
    return (
       <ul
          ref={ref}
-         className={`absolute bg-secondary-0 shadow-md rounded-sm flexColStart ${
+         className={`absolute bg-secondary-0 shadow-md rounded-sm flexColStart z-20 ${
             activeSegments === userNavLinks.key
                ? "-bottom-56 -right-24"
                : "-bottom-44 right-4"
@@ -345,9 +345,8 @@ const DesktopItemSegments = ({ segments, onClose, activeSegments = "" }) => {
             <Link
                key={label}
                href={href}
-               className={`flexRowStart gap-x-1 text-secondary-800 regular-14 w-[144px] border-b ${
-                  icon ? "p-sm" : "px-md py-sm"
-               }`}>
+               className={`flexRowStart gap-x-1 text-secondary-800 regular-14 w-[144px] 
+               border-b last:border-b-0 ${icon ? "p-sm" : "px-md py-sm"}`}>
                {icon && (
                   <Image
                      src={icon}
