@@ -74,7 +74,6 @@ module.exports = {
 
          container: {
             center: true,
-            padding: "1rem",
          },
 
          borderRadius: {
@@ -105,6 +104,15 @@ module.exports = {
             md: "1rem",
             lg: "1.5rem",
             xl: "2rem",
+         },
+
+         backgroundImage: {
+            "slider-1-desktop": "url('/images/slider-1-desktop.png')",
+            "slider-1-mobile": "url('/images/slider-1-mobile.png')",
+            "slider-2-desktop": "url('/images/slider-2-desktop.png')",
+            "slider-2-mobile": "url('/images/slider-2-mobile.png')",
+            "slider-3-desktop": "url('/images/slider-3-desktop.png')",
+            "slider-3-mobile": "url('/images/slider-3-mobile.png')",
          },
       },
    },
