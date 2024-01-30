@@ -18,14 +18,29 @@ const Slider = () => {
          pagination={{
             clickable: true,
          }}>
-         <SwiperSlide>
+         <SwiperSlide className="relative">
             <div className="bg-slider-1-mobile xl:bg-slider-1-desktop h-full bg-cover" />
+            <p
+               className="absolute z-20 bold-16 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
+               -translate-x-[50%] -translate-y-[50%] whitespace-nowrap">
+               تجربه غذای سالم و گیاهی به سبک ترخینه
+            </p>
          </SwiperSlide>
-         <SwiperSlide>
+         <SwiperSlide className="relative">
             <div className="bg-slider-2-mobile xl:bg-slider-2-desktop h-full bg-cover" />
+            <p
+               className="absolute z-20 bold-16 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
+               -translate-x-[50%] -translate-y-[50%] whitespace-nowrap">
+               !طعم بی‌نظیر طبیعت
+            </p>
          </SwiperSlide>
-         <SwiperSlide>
+         <SwiperSlide className="relative">
             <div className="bg-slider-3-mobile xl:bg-slider-3-desktop h-full bg-cover" />
+            <p
+               className="absolute z-20 bold-16 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
+               -translate-x-[50%] -translate-y-[50%] whitespace-nowrap">
+               !لذت غذای سالم و گیاهی را با ترخینه تجربه کنید
+            </p>
          </SwiperSlide>
          <Image
             src="/images/Elipse Group.svg"
