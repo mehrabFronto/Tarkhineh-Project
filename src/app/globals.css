@@ -120,7 +120,7 @@
    }
 
    .input__label {
-      @apply absolute top-1.5 right-4 transition-all cursor-text text-secondary-800;
+      @apply absolute top-0 right-0 transition-all cursor-text text-secondary-800;
    }
 
    .input {
@@ -134,6 +134,10 @@
 
    .input:focus + .input__label {
       @apply -translate-y-5 bg-secondary-0 px-1 regular-12 text-primary-400;
+   }
+
+   .activatedInput + .input__label {
+      @apply -translate-y-5 bg-secondary-0 px-1 regular-12;
    }
 
    .input:disabled {
