@@ -71,6 +71,7 @@ module.exports = {
             lg: "0px 8px 8px 0px rgba(var(--color-shadow))",
             xl: "0px 12px 12px 0px rgba(var(--color-shadow))",
             "2xl": "0px 16px 16px 0px rgba(var(--color-shadow))",
+            cards: "0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.10), 0px 4px 4px 0px rgba(0, 0, 0, 0.09), 0px 9px 5px 0px rgba(0, 0, 0, 0.05), 0px 16px 6px 0px rgba(0, 0, 0, 0.01), 0px 25px 7px 0px rgba(0, 0, 0, 0.00)",
          },
 
          container: {
@@ -93,7 +94,7 @@ module.exports = {
             md: "1.5rem",
             lg: "2.5rem",
             xl: "3rem",
-            "2xl": "3.5",
+            "2xl": "3.5rem",
             "3xl": "4rem",
             "4xl": "5rem",
             "5xl": "7.5rem",

@@ -93,3 +93,42 @@ export const burgerMenuItems = [
    { href: "/about", label: "درباره ما", icon: "/images/profile-2user.svg" },
    { href: "/contact", label: "تماس با ما", icon: "/images/call-calling.svg" },
 ];
+
+export const menuCategories = [
+   {
+      title: "غذای اصلی",
+      image: {
+         src: "/images/plate-1.png",
+         width: 240,
+         height: 240,
+      },
+      href: "/menu/main-course",
+   },
+   {
+      title: "پیش غذا",
+      image: {
+         src: "/images/plate-2.png",
+         width: 240,
+         height: 240,
+      },
+      href: "/menu/appetizer",
+   },
+   {
+      title: "دسر",
+      image: {
+         src: "/images/plate-3.png",
+         width: 240,
+         height: 240,
+      },
+      href: "/menu/dessert",
+   },
+   {
+      title: "نوشیدنی",
+      image: {
+         src: "/images/beverages.png",
+         width: 240,
+         height: 290,
+      },
+      href: "/menu/beverages",
+   },
+];

@@ -91,7 +91,7 @@
    }
 
    .btn--tertiary--fill {
-      @apply bg-secondary-700 text-secondary-0 hover:bg-secondary-800 transition-all;
+      @apply bg-secondary-0 text-secondary-800 whitespace-nowrap hover:text-primary-400 transition-all;
    }
 
    .btn--tertiary--stroke {
@@ -196,11 +196,11 @@
    }
 
    .flexColStart {
-      @apply flex flex-col justify-center items-start;
+      @apply flex flex-col justify-start items-center;
    }
 
    .flexColEnd {
-      @apply flex flex-col justify-center items-end;
+      @apply flex flex-col justify-end items-center;
    }
 
    /* FONTS */
