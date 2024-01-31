@@ -1,5 +1,6 @@
 import SearchBox from "@/common/SearchBox";
 import Slider from "@/common/Slider";
+import Introduction from "./components/Introduction";
 import Menu from "./components/Menu";
 
 const Home = () => {
@@ -16,6 +17,8 @@ const Home = () => {
          </div>
 
          <Menu />
+
+         <Introduction />
       </div>
    );
 };

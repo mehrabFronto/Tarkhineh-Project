@@ -95,8 +95,8 @@
    }
 
    .btn--tertiary--stroke {
-      @apply bg-transparent border border-secondary-700 text-secondary-700 hover:border-secondary-800
-      hover:text-secondary-800 transition-all;
+      @apply bg-transparent border border-secondary-0 text-secondary-0 hover:border-secondary-200
+      hover:text-secondary-200 transition-all;
    }
 
    .btn--tertiary--text {
@@ -172,27 +172,31 @@
    }
 
    .flexRowCenter {
-      @apply flex items-center justify-center;
+      @apply flex flex-row items-center justify-center;
    }
 
    .flexRowBetween {
-      @apply flex items-center justify-between;
+      @apply flex flex-row items-center justify-between;
    }
 
    .flexRowEvenly {
-      @apply flex items-center justify-evenly;
+      @apply flex flex-row items-center justify-evenly;
    }
 
    .flexRowStart {
-      @apply flex items-center justify-start;
+      @apply flex flex-row items-center justify-start;
    }
 
    .flexRowEnd {
-      @apply flex items-center justify-end;
+      @apply flex flex-row items-center justify-end;
    }
 
    .flexColCenter {
       @apply flex flex-col justify-center items-center;
+   }
+
+   .flexColBetween {
+      @apply flex flex-col justify-between items-center;
    }
 
    .flexColStart {
@@ -279,6 +283,10 @@
 
    .regular-12 {
       @apply text-[12px] font-[400] leading-[180%];
+   }
+
+   .regular-10 {
+      @apply text-[10px] font-[400] leading-[180%];
    }
 }
 
