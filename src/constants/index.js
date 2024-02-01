@@ -132,3 +132,31 @@ export const menuCategories = [
       href: "/menu/beverages",
    },
 ];
+
+export const branches = [
+   {
+      name: "شعبه اکباتان",
+      address: "شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم",
+      imageUrl: "/images/branch-1.png",
+      href: "/branch/oktaban",
+   },
+   {
+      name: "شعبه چالوس",
+      address:
+         "چالوس، خیابان ۱۷ شهریور، بعد کوچه کوروش، جنب داروخانه دکتر میلانی",
+      imageUrl: "/images/branch-2.png",
+      href: "/branch/chaloos",
+   },
+   {
+      name: "شعبه اقدسیه",
+      address: "خیابان اقدسیه ، نرسیده به میدان خیام، پلاک ۸",
+      imageUrl: "/images/branch-3.png",
+      href: "/branch/aghdasieh",
+   },
+   {
+      name: "شعبه ونک",
+      address: "میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک ۲۶",
+      imageUrl: "/images/branch-4.png",
+      href: "/branch/vanak",
+   },
+];

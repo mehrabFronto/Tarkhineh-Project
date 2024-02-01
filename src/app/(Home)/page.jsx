@@ -1,5 +1,6 @@
 import SearchBox from "@/common/SearchBox";
 import Slider from "@/common/Slider";
+import Branches from "./components/Branches";
 import Introduction from "./components/Introduction";
 import Menu from "./components/Menu";
 
@@ -19,6 +20,8 @@ const Home = () => {
          <Menu />
 
          <Introduction />
+
+         <Branches />
       </div>
    );
 };
