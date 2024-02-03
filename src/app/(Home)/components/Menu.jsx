@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Menu = () => {
    return (
-      <section className="flexColCenter gap-y-[72px] xl:gap-y-[158px] px-5 xl:px-0">
+      <section className="flexColCenter gap-y-[72px] xl:gap-y-[158px] px-5 xl:px-[108px]">
          <h3 className="bold-16 xl:bold-24">منوی رستوران</h3>
          <div className="grid grid-cols-2 xl:grid-cols-4 gap-x-4 gap-y-[106px] xl:gap-6 w-full">
             {menuCategories.map(({ title, href, image }) => (
