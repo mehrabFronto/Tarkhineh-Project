@@ -49,7 +49,7 @@ const estedadFont = LocalFont({
    ],
    variable: "--font-estedad",
    style: "normal",
-   display: "block",
+   display: "swap",
 });
 
 export default estedadFont;
