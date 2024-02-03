@@ -172,6 +172,7 @@ const MobileBurgerMenu = ({ onClose, onActive, activeSegments }) => {
                                           className="text-secondary-700 border-b last:border-b-0
                                           last:mb-md">
                                           <Link
+                                             prefetch={false}
                                              onClick={onClose}
                                              className="px-sm py-[4px] block"
                                              href={segment.href}>
@@ -343,6 +344,7 @@ const DesktopItemSegments = ({ segments, onClose, activeSegments = "" }) => {
          }`}>
          {segments.map(({ label, href, icon }) => (
             <Link
+               prefetch={false}
                key={label}
                href={href}
                className={`flexRowStart gap-x-1 text-secondary-800 regular-14 w-[144px] 

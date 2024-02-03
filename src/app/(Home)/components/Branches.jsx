@@ -16,6 +16,7 @@ const Branches = () => {
                      group-hover:border-primary-400 group-hover:shadow-cards transition-all duration-300">
                      {/* mobile */}
                      <Link
+                        prefetch={false}
                         href={href}
                         className="flexRowStart xl:flexColCenter gap-x-1 xl:gap-y-2 xl:hidden">
                         <div className="w-[144px] h-20 xl:w-full xl:h-[230px]">

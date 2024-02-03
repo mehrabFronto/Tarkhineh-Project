@@ -28,6 +28,7 @@ const Menu = () => {
 
                   <div className="h-full flexColEnd">
                      <Link
+                        prefetch={false}
                         href={href}
                         className="btn btn--tertiary--fill btn--sm xl:btn--md shadow-sm w-[96px] 
                         xl:w-[155px] relative -bottom-6">

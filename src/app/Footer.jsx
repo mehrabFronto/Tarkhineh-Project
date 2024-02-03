@@ -68,6 +68,7 @@ const Footer = () => {
                               className="regular-10 xl:medium-14 text-secondary-0"
                               key={href}>
                               <Link
+                                 prefetch={false}
                                  className="py-0.5 xl:py-2 block w-1/2"
                                  href={href}>
                                  {label}
@@ -80,6 +81,7 @@ const Footer = () => {
                      <div className="flexRowStart gap-x-2 xl:gap-x-4 mt-[4px] xl:mt-sm pr-sm xl:pr-3">
                         {socials.map((item, index) => (
                            <Link
+                              prefetch={false}
                               key={index}
                               href={item.href}
                               className="block">
