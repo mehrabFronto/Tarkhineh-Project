@@ -160,3 +160,28 @@ export const branches = [
       href: "/branch/vanak",
    },
 ];
+
+export const footerLinks = [
+   {
+      title: "دسترسی آسان",
+      links: [
+         { label: "پرسش‌های متداول", href: "/questions" },
+         { label: "قوانین ترخینه", href: "/rules" },
+         { label: "حریم خصوصی", href: "/privacy" },
+      ],
+      socials: [
+         { icon: "/images/twitter.svg", href: "/" },
+         { icon: "/images/instagram.svg", href: "/" },
+         { icon: "/images/telegram.svg", href: "/" },
+      ],
+   },
+   {
+      title: "شعبه‌های ترخینه",
+      links: [
+         { label: "شعبه اکباتان", href: "/branch/oktaban" },
+         { label: "شعبه چالوس", href: "/branch/chaloos" },
+         { label: "شعبه اقدسیه", href: "/branch/aghdasieh" },
+         { label: "شعبه ونک", href: "/branch/vanak" },
+      ],
+   },
+];

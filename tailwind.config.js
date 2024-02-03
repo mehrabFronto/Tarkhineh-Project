@@ -117,6 +117,8 @@ module.exports = {
             "slider-3-mobile": "url('/images/slider-3-mobile.png')",
             "introduction-mobile": "url('/images/Introduction-mobile.png')",
             "introduction-desktop": "url('/images/Introduction-desktop.png')",
+            "footer-mobile": "url('/images/footer-mobile.png')",
+            "footer-desktop": "url('/images/footer-desktop.png')",
          },
       },
    },

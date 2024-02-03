@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Branches = () => {
    return (
-      <section className="flexColCenter gap-y-3 xl:gap-y-6 px-5 xl:px-0 mt-md xl:mt-xl mb-4xl">
+      <section className="flexColCenter gap-y-3 xl:gap-y-6 px-5 xl:px-0 mt-md xl:mt-xl mb-md xl:mb-xl">
          <h3 className="bold-16 xl:bold-24">ترخینه گردی</h3>
          <div className="flexColCenter xl:flexRowCenter gap-y-3 xl:gap-x-6 w-full xl:px-[108px] ">
             {branches.map(({ name, address, imageUrl, href }) => (
