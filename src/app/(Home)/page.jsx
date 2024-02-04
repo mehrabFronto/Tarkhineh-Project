@@ -8,12 +8,12 @@ const Home = () => {
    return (
       <div>
          {/* slider */}
-         <section className="mb-sm xl:mb-2xl">
+         <section className="mb-sm lg:mb-lg xl:mb-2xl">
             <Slider />
          </section>
 
          {/* mobil search box */}
-         <div className="w-full px-5 xl:hidden mb-md">
+         <div className="w-full px-5 lg:hidden mb-md">
             <SearchBox />
          </div>
 

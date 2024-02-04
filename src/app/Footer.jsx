@@ -51,25 +51,25 @@ const Footer = () => {
    }, []);
 
    return (
-      <footer className="container bg-footer-mobile xl:bg-footer-desktop bg-cover">
-         <div className="grid grid-cols-2 xl:grid-cols-4 py-md xl:py-xl px-5 xl:px-28">
+      <footer className="container bg-footer-mobile lg:bg-footer-desktop bg-cover">
+         <div className="grid grid-cols-2 lg:grid-cols-4 py-md lg:py-lg xl:py-xl px-5 lg:px-16 xl:px-28">
             {/* links */}
             {footerLinks.map(({ title, links, socials }) => (
                <div
                   key={title}
-                  className="space-y-2 xl:space-y-4 col-span-1">
-                  <h4 className="regular-12 xl:bold-20 text-secondary-0">
+                  className="space-y-2 lg:space-y-4 col-span-1">
+                  <h4 className="regular-12 lg:bold-18 xl:bold-20 text-secondary-0">
                      {title}
                   </h4>
-                  <ul className="pr-sm xl:pr-3">
+                  <ul className="pr-sm lg:pr-3">
                      {links.map(({ label, href }) => {
                         return (
                            <li
-                              className="regular-10 xl:medium-14 text-secondary-0"
+                              className="regular-10 lg:medium-14 text-secondary-0"
                               key={href}>
                               <Link
                                  prefetch={false}
-                                 className="py-0.5 xl:py-2 block w-1/2"
+                                 className="py-0.5 lg:py-1.5 xl:py-2 block w-1/2 whitespace-nowrap"
                                  href={href}>
                                  {label}
                               </Link>
@@ -78,7 +78,7 @@ const Footer = () => {
                      })}
                   </ul>
                   {socials && (
-                     <div className="flexRowStart gap-x-2 xl:gap-x-4 mt-[4px] xl:mt-sm pr-sm xl:pr-3">
+                     <div className="flexRowStart gap-x-2 lg:gap-x-3 xl:gap-x-4 mt-[4px] xl:mt-sm pr-sm lg:pr-3">
                         {socials.map((item, index) => (
                            <Link
                               prefetch={false}
@@ -90,7 +90,7 @@ const Footer = () => {
                                  width={24}
                                  height={24}
                                  alt="socials"
-                                 className="size-4 xl:size-6"
+                                 className="size-4 lg:size-5 xl:size-6"
                               />
                            </Link>
                         ))}
@@ -100,8 +100,8 @@ const Footer = () => {
             ))}
 
             {/* send message form */}
-            <form className="hidden xl:block col-span-2 space-y-4">
-               <h4 className="regular-12 xl:bold-20 text-secondary-0">
+            <form className="hidden lg:block col-span-2 space-y-5">
+               <h4 className="regular-12 lg:bold-18 xl:bold-20 text-secondary-0">
                   پیام به ترخینه
                </h4>
 

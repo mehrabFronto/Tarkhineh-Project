@@ -16,12 +16,12 @@ const Header = () => {
    return (
       <header>
          <nav
-            className="container px-[1.25rem] py-md xl:px-[6.75rem] xl:py-xl flexRowBetween
-            xl:gap-x-[54px]">
+            className="container px-[1.25rem] py-md lg:px-16 xl:px-[6.75rem] lg:py-lg xl:py-xl
+            flexRowBetween xl:gap-x-[54px]">
             {/* burger menu button */}
             <button
                onClick={() => setIsOpen(true)}
-               className="flexRowCenter xl:hidden">
+               className="flexRowCenter lg:hidden">
                <Image
                   src="/images/menu.svg"
                   alt="Tarkhineh"
@@ -39,20 +39,20 @@ const Header = () => {
             )}
 
             {/* logo */}
-            <div className="flexRowCenter xl:items-start gap-x-1 xl:gap-x-2">
+            <div className="flexRowCenter items-start gap-x-1 xl:gap-x-2">
                <Image
                   src="/images/Logo.svg"
                   alt="logo"
                   width={29}
                   height={32}
-                  className="w-[29px] h-[32px] xl:w-[46px] xl:h-[51px]"
+                  className="w-[29px] h-[32px] lg:w-[40px] lg:h-[45px] xl:w-[46px] xl:h-[51px]"
                />
                <Image
                   src="/images/Vector.svg"
                   alt="Tarkhineh"
                   width={67}
                   height={32}
-                  className="w-[67px] h-[32px] xl:w-[99px] xl:h-[46px]"
+                  className="w-[67px] h-[32px] lg:w-[93px] lg:h-[40px] xl:w-[99px] xl:h-[46px]"
                />
             </div>
 
@@ -84,7 +84,7 @@ const MobileBurgerMenu = ({ onClose, onActive, activeSegments }) => {
    };
 
    return (
-      <div className="2xl:hidden">
+      <div className="lg:hidden">
          {/* backdrop */}
          <div
             className="fixed w-full h-screen top-0 left-0 z-20 backdrop-blur-[2px]
@@ -220,15 +220,15 @@ const DesktopNavbar = ({ activeSegments, onActive }) => {
    };
 
    return (
-      <ul className="hidden xl:flexRowCenter w-full gap-x-6">
+      <ul className="hidden lg:flexRowCenter w-full lg:gap-x-4 xl:gap-x-6">
          {listItems.map(({ label, href, icon, segments }) => (
             <li
                key={label}
                className={`flexRowCenter gap-x-1 transition-all cursor-pointer relative
                      ${
                         pathname === href
-                           ? "bold-20 text-primary-400 border-b border-primary-400"
-                           : "regular-20 text-secondary-700"
+                           ? "lg:bold-18 xl:bold-20 text-primary-400 border-b border-primary-400"
+                           : "lg:regular-18 xl:regular-20 text-secondary-700"
                      }`}>
                {icon ? (
                   <Fragment>
@@ -273,23 +273,23 @@ const HeaderButtons = ({ activeSegments, onActive }) => {
    };
 
    return (
-      <div className="flexRowCenter gap-x-1 xl:gap-x-2">
-         <button className="hidden xl:flexRowCenter size-6 xl:size-10 bg-primary-50 rounded-sm">
+      <div className="flexRowCenter gap-x-1 lg:gap-x-2">
+         <button className="hidden lg:flexRowCenter size-6 lg:size-8 xl:size-10 bg-primary-50 rounded-sm">
             <Image
                src="/images/search-normal.svg"
                alt="Tarkhineh"
                width={16}
                height={16}
-               className="w-4 h-4 xl:w-6 xl:h-6"
+               className="size-4 lg:size-5 xl:size-6"
             />
          </button>
-         <button className="flexRowCenter size-6 xl:size-10 bg-primary-50 rounded-sm">
+         <button className="flexRowCenter size-6 lg:size-8 xl:size-10 bg-primary-50 rounded-sm">
             <Image
                src="/images/shopping-cart.svg"
                alt="Tarkhineh"
                width={16}
                height={16}
-               className="w-4 h-4 xl:w-6 xl:h-6"
+               className="size-4 lg:size-5 xl:size-6"
             />
          </button>
          <div
@@ -298,14 +298,14 @@ const HeaderButtons = ({ activeSegments, onActive }) => {
             <button
                id="exception__id"
                onClick={() => clickHandler(userNavLinks.key)}
-               className="flexRowCenter gap-x-1 w-10 h-6 xl:w-14 xl:h-10 bg-primary-50 rounded-sm">
+               className="flexRowCenter gap-x-1 w-10 h-6 lg:w-12 lg:h-8 xl:w-14 xl:h-10 bg-primary-50 rounded-sm">
                <Image
                   id="exception__id"
                   src="/images/user.svg"
                   alt="Tarkhineh"
                   width={16}
                   height={16}
-                  className="w-4 h-4 xl:w-6 xl:h-6"
+                  className="size-4 lg:size-5 xl:size-6"
                />
                <Image
                   id="exception__id"

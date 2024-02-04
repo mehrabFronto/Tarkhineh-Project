@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const Slider = () => {
    return (
       <Swiper
-         className="h-[176px] xl:h-[336px] w-full relative"
+         className="h-[176px] lg:h-[255px] xl:h-[336px] w-full relative"
          dir="ltr"
          modules={[Navigation, Pagination, A11y]}
          slidesPerView={1}
@@ -19,25 +19,25 @@ const Slider = () => {
             clickable: true,
          }}>
          <SwiperSlide className="relative">
-            <div className="bg-slider-1-mobile xl:bg-slider-1-desktop h-full bg-cover" />
+            <div className="bg-slider-1-mobile lg:bg-slider-1-desktop h-full bg-cover" />
             <p
-               className="absolute z-20 bold-16 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
+               className="absolute z-20 bold-16 lg:bold-32 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
                -translate-x-[50%] -translate-y-[50%] whitespace-nowrap">
                تجربه غذای سالم و گیاهی به سبک ترخینه
             </p>
          </SwiperSlide>
          <SwiperSlide className="relative">
-            <div className="bg-slider-2-mobile xl:bg-slider-2-desktop h-full bg-cover" />
+            <div className="bg-slider-2-mobile lg:bg-slider-2-desktop h-full bg-cover" />
             <p
-               className="absolute z-20 bold-16 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
+               className="absolute z-20 bold-16 lg:bold-32 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
                -translate-x-[50%] -translate-y-[50%] whitespace-nowrap">
                !طعم بی‌نظیر طبیعت
             </p>
          </SwiperSlide>
          <SwiperSlide className="relative">
-            <div className="bg-slider-3-mobile xl:bg-slider-3-desktop h-full bg-cover" />
+            <div className="bg-slider-3-mobile lg:bg-slider-3-desktop h-full bg-cover" />
             <p
-               className="absolute z-20 bold-16 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
+               className="absolute z-20 bold-16 lg:bold-32 xl:bold-40 text-secondary-0 top-[50%] left-[50%]
                -translate-x-[50%] -translate-y-[50%] whitespace-nowrap">
                !لذت غذای سالم و گیاهی را با ترخینه تجربه کنید
             </p>
@@ -47,7 +47,7 @@ const Slider = () => {
             width={154}
             height={33}
             className="absolute z-10 left-[50%] -translate-x-[50%] -translate-y-[50%]
-            w-[82px] h-[19px] xl:w-[154px] xl:h-[33px] -bottom-[11px] xl:-bottom-[17px]"
+            w-[82px] h-[19px] lg:w-[154px] lg:h-[33px] -bottom-[11px] lg:-bottom-[17px]"
             alt="Elipse Group"
          />
       </Swiper>

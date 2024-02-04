@@ -237,6 +237,10 @@
       @apply text-[20px] font-[700] leading-[140%];
    }
 
+   .bold-18 {
+      @apply text-[18px] font-[700] leading-[140%];
+   }
+
    .bold-16 {
       @apply text-[16px] font-[700] leading-[140%];
    }
@@ -257,12 +261,20 @@
       @apply text-[20px] font-[600] leading-[180%];
    }
 
+   .semiBold-18 {
+      @apply text-[18px] font-[600] leading-[180%];
+   }
+
    .medium-16 {
       @apply text-[16px] font-[500] leading-[180%];
    }
 
    .medium-14 {
       @apply text-[14px] font-[500] leading-[170%];
+   }
+
+   .medium-12 {
+      @apply text-[12px] font-[500] leading-[170%];
    }
 
    .regular-20 {
