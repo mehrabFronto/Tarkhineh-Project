@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const useOutsideClick = (cb, exceptionId, listenCapturing = true) => {
+const useOutsideClick = (cb, exceptionKey, listenCapturing = true) => {
    const ref = useRef();
 
    useEffect(() => {
@@ -8,9 +8,8 @@ const useOutsideClick = (cb, exceptionId, listenCapturing = true) => {
          if (
             ref.current &&
             !ref.current.contains(e.target) &&
-            e.target?.id !== exceptionId
+            ![...e.target.classList].includes(exceptionKey)
          ) {
-            // console.log(e.target?.id);
             cb();
          }
       };

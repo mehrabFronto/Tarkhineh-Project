@@ -130,33 +130,28 @@ const MobileBurgerMenu = ({ onClose, onActive, activeSegments }) => {
                         {segments ? (
                            <div className="w-full">
                               <div
-                                 id="exception__id"
                                  onClick={() => clickHandler(segments.key)}
-                                 className="w-full flexRowBetween py-sm">
-                                 <div
-                                    id="exception__id"
-                                    className="flexRowStart gap-x-1 w-full">
+                                 className="exception w-full flexRowBetween py-sm">
+                                 <div className="exception flexRowStart gap-x-1 w-full">
                                     <Image
-                                       id="exception__id"
                                        src={icon}
                                        alt={Loadable}
                                        width={12}
                                        height={12}
-                                       className={`${
+                                       className={`exception ${
                                           href === pathname
                                              ? "w-4 h-4"
                                              : "w-3 h-3"
                                        }`}
                                     />
-                                    <span id="exception__id">{label}</span>
+                                    <span className="exception">{label}</span>
                                  </div>
                                  <Image
-                                    id="exception__id"
                                     src={"/images/arrow-down-black.svg"}
                                     alt="arrow-down"
                                     width={16}
                                     height={16}
-                                    className={` transition-all duration-500 ${
+                                    className={` transition-all duration-500 exception ${
                                        segments.key === activeSegments
                                           ? "rotate-180"
                                           : ""
@@ -233,17 +228,15 @@ const DesktopNavbar = ({ activeSegments, onActive }) => {
                {icon ? (
                   <Fragment>
                      <div
-                        id="exception__id"
-                        className="flexRowCenter gap-x-1"
+                        className="flexRowCenter gap-x-1 exception"
                         onClick={() => clickHandler(segments.key)}>
-                        <span id="exception__id">{label}</span>
+                        <span className="exception">{label}</span>
                         <Image
-                           id="exception__id"
                            src="/images/arrow-down.svg"
                            alt="Tarkhineh"
                            width={16}
                            height={16}
-                           className={`transition-all duration-500 ${
+                           className={`transition-all duration-500 exception ${
                               activeSegments === segments.key
                                  ? "rotate-180"
                                  : ""
@@ -292,28 +285,24 @@ const HeaderButtons = ({ activeSegments, onActive }) => {
                className="size-4 lg:size-5 xl:size-6"
             />
          </button>
-         <div
-            id="exception__id"
-            className="relative">
+         <div className="relative exception">
             <button
-               id="exception__id"
                onClick={() => clickHandler(userNavLinks.key)}
-               className="flexRowCenter gap-x-1 w-10 h-6 lg:w-12 lg:h-8 xl:w-14 xl:h-10 bg-primary-50 rounded-sm">
+               className="flexRowCenter gap-x-1 w-10 h-6 lg:w-12 lg:h-8 xl:w-14 xl:h-10 bg-primary-50 rounded-sm
+               exception">
                <Image
-                  id="exception__id"
                   src="/images/user.svg"
                   alt="Tarkhineh"
                   width={16}
                   height={16}
-                  className="size-4 lg:size-5 xl:size-6"
+                  className="size-4 lg:size-5 xl:size-6 exception"
                />
                <Image
-                  id="exception__id"
                   src="/images/arrow-down-green.svg"
                   alt="Tarkhineh"
                   width={16}
                   height={16}
-                  className={`transition-all duration-500 ${
+                  className={`transition-all duration-500 exception ${
                      activeSegments === userNavLinks.key ? "rotate-180" : ""
                   }`}
                />
@@ -332,7 +321,7 @@ const HeaderButtons = ({ activeSegments, onActive }) => {
 };
 
 const DesktopItemSegments = ({ segments, onClose, activeSegments = "" }) => {
-   const ref = useOutsideClick(onClose, "exception__id");
+   const ref = useOutsideClick(onClose, "exception");
 
    return (
       <ul
